@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="This Is Us 영어">
+<meta name="theme-color" content="#FBF4EA">
+<meta name="description" content="미드 This Is Us 시즌1 실제 대사로 배우는 영어 — 관사·시제·억양 포인트, 빈칸 퀴즈, 복습장">
+<title>This Is Us 영어공부</title>
+<style>
+  :root{
+    --cream:#FBF4EA;
+    --cream-deep:#F4E9DA;
+    --card:#FFFDF8;
+    --ink:#382A23;
+    --ink-soft:#6F5B4E;
+    --ink-faint:#9C8674;
+    --terra:#B85C38;
+    --terra-dark:#8F4225;
+    --terra-tint:#F6E3D9;
+    --sage:#77855F;
+    --sage-tint:#E9EDDF;
+    --line:#EADCC8;
+    --gold:#C99A3F;
+    --radius:20px;
+    --shadow:0 6px 22px rgba(120,84,52,.10);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(120% 60% at 50% -10%, #FFF9F0 0%, rgba(255,249,240,0) 60%),
+      var(--cream);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+  }
+  .app{
+    max-width:460px;
+    margin:0 auto;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+  }
+
+  /* ---------- header ---------- */
+  .top{
+    padding:calc(env(safe-area-inset-top) + 18px) 20px 14px;
+  }
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.14em;
+    color:var(--terra);
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  h1{
+    margin:6px 0 2px;
+    font-size:26px;
+    line-height:1.2;
+    letter-spacing:-.02em;
+    font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+    font-weight:600;
+  }
+  h1 span{
+    display:inline-block;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;
+    font-size:15px;
+    font-weight:700;
+    color:var(--terra);
+    background:var(--terra-tint);
+    border-radius:999px;
+    padding:2px 10px 3px;
+    vertical-align:middle;
+    margin-left:2px;
+    letter-spacing:0;
+  }
+  .tagline{margin:0;color:var(--ink-soft);font-size:13px;}
+  .meter{
+    margin-top:14px;
+    height:7px;
+    background:var(--cream-deep);
+    border-radius:999px;
+    overflow:hidden;
+    border:1px solid #F0E3D0;
+  }
+  .meter i{
+    display:block;height:100%;width:0%;
+    background:linear-gradient(90deg,#D08152,var(--terra));
+    border-radius:999px;
+    transition:width .35s ease;
+  }
+  .meter-row{
+    display:flex;justify-content:space-between;
+    font-size:11.5px;color:var(--ink-faint);
+    margin-top:6px;font-variant-numeric:tabular-nums;
+  }
+  .meter-row b{color:var(--ink-soft);font-weight:600;}
+
+  /* ---------- main ---------- */
+  main{flex:1;padding-bottom:104px;}
+  .view{display:none;padding:0 20px;}
+  .view.on{display:block;animation:fade .28s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  /* ---------- chips ---------- */
+  .chips{
+    display:flex;gap:8px;overflow-x:auto;
+    padding:2px 20px 8px;margin:0 -20px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{display:none;}
+  .chip{
+    flex:0 0 auto;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink-soft);
+    font-size:13px;
+    font-weight:600;
+    padding:9px 14px;
+    border-radius:999px;
+    font-family:inherit;
+    transition:all .18s ease;
+    cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{
+    background:var(--terra);
+    border-color:var(--terra);
+    color:#FFF8F2;
+    box-shadow:0 3px 10px rgba(184,92,56,.25);
+  }
+  .chips-label{
+    font-size:11px;color:var(--ink-faint);letter-spacing:.04em;
+    margin:6px 0 6px;font-weight:700;
+  }
+  .filter-block{margin-bottom:2px;}
+
+  /* ---------- card ---------- */
+  .card{
+    margin-top:14px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 16px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,#D6865C,var(--terra-dark));
+    opacity:.85;
+  }
+  .card-top{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;margin-bottom:12px;
+  }
+  .ep{
+    font-size:11px;font-weight:700;letter-spacing:.06em;
+    color:var(--terra-dark);background:var(--terra-tint);
+    border-radius:8px;padding:4px 8px;
+  }
+  .star{
+    border:none;background:transparent;
+    font-size:23px;line-height:1;
+    color:#D8C6AE;
+    padding:6px 10px;margin:-6px -6px -6px 0;
+    cursor:pointer;
+    transition:transform .18s ease,color .18s ease;
+  }
+  .star[aria-pressed="true"]{color:var(--gold);transform:scale(1.08);}
+  .speaker{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .avatar{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--sage-tint);color:var(--sage);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:14px;flex:0 0 auto;
+    border:1px solid #DDE3CE;
+  }
+  .speaker b{display:block;font-size:14.5px;letter-spacing:-.01em;}
+  .speaker small{display:block;font-size:11.5px;color:var(--ink-faint);line-height:1.4;}
+  .quote{
+    margin:0 0 14px;
+    font-family:"Iowan Old Style","Palatino Linotype",Georgia,"Times New Roman",serif;
+    font-size:19px;
+    line-height:1.62;
+    letter-spacing:-.005em;
+    color:#2E211B;
+  }
+  .quote .hl{
+    background:linear-gradient(180deg,transparent 62%,#F7DFC9 62%);
+    padding:0 1px;
+  }
+  .listen{display:flex;gap:8px;align-items:center;margin-bottom:6px;}
+  .listen-label{font-size:11px;color:var(--ink-faint);margin-right:2px;}
+  .btn-speak{
+    border:1px solid var(--line);background:#FFF9F1;color:var(--ink-soft);
+    font-size:12.5px;font-weight:700;font-family:inherit;
+    padding:10px 15px;border-radius:999px;cursor:pointer;
+    transition:all .18s ease;
+  }
+  .btn-speak[aria-pressed="true"]{
+    background:var(--sage-tint);border-color:#CBD4B8;color:#5C6B47;
+  }
+  .divider{height:1px;background:var(--line);margin:14px 0;}
+
+  .sect-btn{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    gap:8px;background:transparent;border:none;padding:6px 0;
+    font-family:inherit;font-size:13.5px;font-weight:700;color:var(--ink);
+    cursor:pointer;
+  }
+  .sect-btn .caret{
+    font-size:11px;color:var(--ink-faint);transition:transform .2s ease;
+  }
+  .sect-btn[aria-expanded="false"] .caret{transform:rotate(-90deg);}
+  .ko{
+    margin:6px 0 0;font-size:14.5px;line-height:1.7;color:var(--ink-soft);
+    background:#FDF7EE;border:1px dashed var(--line);
+    border-radius:12px;padding:12px 13px;
+  }
+  .ko.hide, .points.hide{display:none;}
+
+  .points{padding-top:2px;}
+  .pt{
+    display:flex;gap:9px;margin-top:11px;
+  }
+  .pt-tag{
+    flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.02em;
+    color:var(--terra-dark);background:var(--terra-tint);
+    border-radius:6px;padding:3px 7px;height:fit-content;margin-top:2px;
+  }
+  .pt-tag.g{color:#5C6B47;background:var(--sage-tint);}
+  .pt-tag.b{color:#4E6480;background:#E5EBF2;}
+  .pt p{margin:0;font-size:13px;line-height:1.65;color:var(--ink-soft);}
+  .pt p b{color:var(--ink);font-weight:700;}
+
+  .card-foot{margin-top:16px;display:flex;gap:8px;}
+  .btn-done{
+    flex:1;border:1px solid var(--terra);background:var(--terra);
+    color:#FFF8F2;font-family:inherit;font-size:14px;font-weight:700;
+    padding:12px;border-radius:14px;cursor:pointer;
+    transition:all .18s ease;
+  }
+  .btn-done[aria-pressed="true"]{
+    background:var(--sage);border-color:var(--sage);
+  }
+  .card-nav{
+    display:flex;align-items:center;justify-content:space-between;
+    margin:14px 2px 0;gap:10px;
+  }
+  .card-nav button{
+    border:1px solid var(--line);background:var(--card);color:var(--ink-soft);
+    font-family:inherit;font-size:13px;font-weight:700;
+    padding:11px 16px;border-radius:12px;cursor:pointer;
+  }
+  .card-nav button:active{background:var(--cream-deep);}
+  .card-nav button:disabled{opacity:.35;cursor:default;}
+  .counter{font-size:12px;color:var(--ink-faint);font-variant-numeric:tabular-nums;}
+  .counter b{color:var(--ink);font-size:13px;}
+
+  .empty{
+    text-align:center;padding:44px 18px;color:var(--ink-faint);
+    font-size:13.5px;line-height:1.7;
+    background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);
+    margin-top:16px;
+  }
+
+  /* ---------- quiz ---------- */
+  .quiz-head{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;}
+  .quiz-head h2{margin:0;font-size:15px;}
+  .quiz-head span{font-size:12px;color:var(--ink-faint);font-variant-numeric:tabular-nums;}
+  .qcard{
+    margin-top:10px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);
+  }
+  .qmeta{font-size:11px;color:var(--ink-faint);font-weight:700;letter-spacing:.04em;margin-bottom:10px;}
+  .qtext{
+    font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+    font-size:18px;line-height:1.6;margin:0 0 16px;
+  }
+  .blank{
+    display:inline-block;min-width:64px;border-bottom:2px solid var(--terra);
+    color:var(--terra);text-align:center;
+  }
+  .opts{display:flex;flex-direction:column;gap:9px;}
+  .opt{
+    text-align:left;font-family:inherit;font-size:14.5px;
+    background:#FFFCF7;border:1.5px solid var(--line);
+    border-radius:13px;padding:12px 14px;color:var(--ink);
+    cursor:pointer;transition:all .16s ease;
+    display:flex;align-items:center;gap:10px;
+  }
+  .opt .k{
+    flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+    background:var(--cream-deep);color:var(--ink-soft);
+    font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  }
+  .opt.right{background:#EFF3E5;border-color:#A9B892;color:#3F4C30;}
+  .opt.right .k{background:#C6D3B0;color:#3F4C30;}
+  .opt.wrong{background:#FBEAE3;border-color:#E0A98F;color:#8A3F26;}
+  .opt.wrong .k{background:#F0C9B7;color:#8A3F26;}
+  .opt:disabled{cursor:default;}
+  .explain{
+    margin-top:14px;border-radius:13px;padding:13px 14px;
+    background:#FDF7EE;border:1px solid var(--line);
+    font-size:13px;line-height:1.7;color:var(--ink-soft);
+    animation:fade .25s ease;
+  }
+  .explain b{color:var(--ink);}
+  .explain .verdict{display:block;font-size:12px;font-weight:800;margin-bottom:5px;letter-spacing:.02em;}
+  .verdict.ok{color:#5C6B47;}
+  .verdict.no{color:#A9542F;}
+  .explain .full{
+    display:block;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);
+    font-family:"Iowan Old Style",Georgia,serif;font-size:14px;color:var(--ink);
+  }
+  .btn-next{
+    width:100%;margin-top:14px;border:none;background:var(--terra);color:#FFF8F2;
+    font-family:inherit;font-size:14.5px;font-weight:700;
+    padding:13px;border-radius:14px;cursor:pointer;
+  }
+  .quiz-intro{
+    margin-top:18px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:24px 20px;text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .quiz-intro .big{font-size:34px;line-height:1;}
+  .quiz-intro h2{margin:12px 0 6px;font-size:19px;letter-spacing:-.01em;}
+  .quiz-intro p{margin:0 0 6px;font-size:13.5px;color:var(--ink-soft);line-height:1.7;}
+  .quiz-intro .btn-next{margin-top:18px;}
+  .result-score{
+    font-family:"Iowan Old Style",Georgia,serif;
+    font-size:44px;line-height:1.1;color:var(--terra);margin:6px 0 0;
+  }
+  .result-score small{font-size:18px;color:var(--ink-faint);}
+  .result-msg{font-size:14px;color:var(--ink-soft);margin:8px 0 0;}
+  .btn-ghost{
+    width:100%;margin-top:10px;background:transparent;border:1px solid var(--line);
+    color:var(--ink-soft);font-family:inherit;font-size:13.5px;font-weight:700;
+    padding:12px;border-radius:14px;cursor:pointer;
+  }
+
+  /* ---------- review ---------- */
+  .stats{display:flex;gap:10px;margin-top:16px;}
+  .stat{
+    flex:1;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:14px 8px;text-align:center;
+  }
+  .stat b{
+    display:block;font-size:22px;line-height:1.2;color:var(--terra-dark);
+    font-variant-numeric:tabular-nums;
+  }
+  .stat span{font-size:11px;color:var(--ink-faint);}
+  .rev-title{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin:24px 0 10px;
+  }
+  .rev-title h2{margin:0;font-size:16px;letter-spacing:-.01em;}
+  .rev-title span{font-size:12px;color:var(--ink-faint);}
+  .fav{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    margin-bottom:10px;overflow:hidden;
+  }
+  .fav-head{
+    width:100%;text-align:left;background:transparent;border:none;
+    padding:15px 16px;font-family:inherit;cursor:pointer;display:block;
+  }
+  .fav-head:active{background:#FDF7EE;}
+  .fav-top{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+  .fav-top .ep{font-size:10px;padding:3px 7px;}
+  .fav-top .who{font-size:12px;font-weight:700;color:var(--ink-soft);}
+  .fav-top .unstar{
+    margin-left:auto;border:none;background:transparent;color:var(--gold);
+    font-size:17px;line-height:1;padding:0 2px;cursor:pointer;
+  }
+  .fav-quote{
+    font-family:"Iowan Old Style",Georgia,serif;font-size:14.5px;line-height:1.55;
+    color:#33261F;margin:0;
+  }
+  .fav-body{padding:0 15px 15px;display:none;}
+  .fav.open .fav-body{display:block;animation:fade .22s ease;}
+  .fav-body .ko{margin-top:0;}
+  .fav-body .points{margin-top:4px;}
+  .reset-wrap{margin:26px 0 10px;}
+  .note{
+    margin-top:18px;font-size:11.5px;line-height:1.7;color:var(--ink-faint);
+    border-top:1px solid var(--line);padding-top:14px;
+  }
+
+  /* ---------- tabs ---------- */
+  .tabs{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    max-width:460px;margin:0 auto;
+    background:rgba(255,253,248,.94);
+    -webkit-backdrop-filter:saturate(180%) blur(14px);
+    backdrop-filter:saturate(180%) blur(14px);
+    border-top:1px solid var(--line);
+    display:flex;
+    padding:8px 10px calc(8px + env(safe-area-inset-bottom));
+  }
+  .tabs button{
+    flex:1;background:transparent;border:none;font-family:inherit;
+    font-size:11px;font-weight:700;color:var(--ink-faint);
+    display:flex;flex-direction:column;align-items:center;gap:3px;
+    padding:6px 2px;border-radius:12px;cursor:pointer;
+    transition:color .18s ease,background .18s ease;
+  }
+  .tabs button .ic{font-size:19px;line-height:1;}
+  .tabs button[aria-selected="true"]{color:var(--terra-dark);background:var(--terra-tint);}
+
+  /* ---------- toast ---------- */
+  .toast{
+    position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom));
+    transform:translate(-50%,10px);z-index:40;
+    background:#3B2B22;color:#FFF6EC;font-size:12.5px;font-weight:600;
+    padding:9px 16px;border-radius:999px;
+    opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;
+    max-width:88%;text-align:center;
+  }
+  .toast.on{opacity:1;transform:translate(-50%,0);}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="eyebrow">Season 1 · 12 Scenes</div>
+    <h1>This Is Us <span>영어공부</span></h1>
+    <p class="tagline">레몬 한 문장부터, 하루 한 장면</p>
+    <div class="meter"><i id="meterFill"></i></div>
+    <div class="meter-row">
+      <span id="meterText">0 / 12 학습 완료</span>
+      <span id="meterStar">★ 0</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- 학습 -->
+    <section class="view on" id="view-learn" aria-label="대사 카드 학습">
+      <div class="filter-block">
+        <div class="chips-label">에피소드</div>
+        <div class="chips" id="epChips"></div>
+        <div class="chips-label">인물</div>
+        <div class="chips" id="chChips"></div>
+      </div>
+      <div id="cardHost"></div>
+    </section>
+
+    <!-- 퀴즈 -->
+    <section class="view" id="view-quiz" aria-label="빈칸 퀴즈">
+      <div id="quizHost"></div>
+    </section>
+
+    <!-- 복습장 -->
+    <section class="view" id="view-review" aria-label="복습장">
+      <div class="stats">
+        <div class="stat"><b id="stLearned">0</b><span>학습 완료</span></div>
+        <div class="stat"><b id="stFav">0</b><span>즐겨찾기</span></div>
+        <div class="stat"><b id="stBest">-</b><span>퀴즈 최고</span></div>
+      </div>
+      <div class="meter" style="margin-top:16px"><i id="revFill"></i></div>
+      <div class="meter-row"><span id="revText">전체 진도 0%</span><span>12장면</span></div>
+
+      <div class="rev-title">
+        <h2>★ 복습장</h2>
+        <span id="favCount">0개</span>
+      </div>
+      <div id="favList"></div>
+      <div class="reset-wrap">
+        <button class="btn-ghost" id="resetBtn">학습 기록 초기화</button>
+      </div>
+      <p class="note">
+        대사는 NBC 드라마 &lt;This Is Us&gt; 시즌 1의 실제 방송 대사입니다 (팬 제작 학습용).<br>
+        학습 완료·즐겨찾기·퀴즈 최고 점수는 이 브라우저에만 저장됩니다.
+      </p>
+    </section>
+  </main>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="learn" aria-selected="true"><span class="ic">📖</span>학습</button>
+    <button role="tab" data-tab="quiz" aria-selected="false"><span class="ic">✏️</span>빈칸 퀴즈</button>
+    <button role="tab" data-tab="review" aria-selected="false"><span class="ic">★</span>복습장</button>
+  </nav>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============ 데이터: 실제 대사 12개 ============ */
+  var QUOTES = [
+    {
+      id: "dk-lemon",
+      ep: 1,
+      epTitle: "Pilot",
+      speaker: "닥터 K",
+      scene: "분만실 복도 · 세 쌍둥이 중 하나를 잃은 잭에게",
+      quote: "I like to think that maybe one day you'll be an old man like me, talking a younger man's ear off, explaining to him how you took the sourest lemon that life has to offer and turned it into something resembling lemonade. If you can do that, then you'll still be taking three babies home from this hospital. Just maybe not the way you planned.",
+      ko: "언젠가 당신도 나 같은 늙은이가 되어, 젊은 사람에게 귀가 아프도록 떠들어대길 바랍니다. 인생이 준 가장 신 레몬을 어떻게 레모네이드 비슷한 무언가로 만들어냈는지 설명하면서요. 그렇게 할 수 있다면, 당신은 여전히 이 병원에서 세 아이를 데리고 집으로 갈 겁니다. 계획했던 방식은 아니더라도요.",
+      points: [
+        { t: "시제", c: "", x: "`one day you'll be`는 미래, 그 미래에서 돌아보는 `how you took ... and turned ...`는 과거. 한 문장 안에서 시점이 두 번 이동합니다. `how you took`는 의문사 + 주어 + 동사 어순(간접의문문)입니다." },
+        { t: "관사", c: "", x: "`an old man`은 모음 소리(/oʊ/)로 시작해 an, `a younger man`은 자음 소리라 a. 반면 `the sourest lemon`처럼 최상급으로 하나뿐인 대상에는 the를 씁니다." },
+        { t: "억양", c: "g", x: "`the SOURest LEMon`처럼 최상급과 핵심 명사에 강세를 두고, `something reSEMbling LEMonade`는 앞을 낮게 깔고 lemonade에서 힘을 뺀 채 내려앉히면 담담한 위로가 됩니다." },
+        { t: "표현", c: "b", x: "`talk someone's ear off` = 귀가 아프도록 떠들다. `something resembling lemonade`는 '레모네이드'가 아니라 '레모네이드 비슷한 것' — 완벽하지 않아도 괜찮다는 뜻을 담은 표현입니다." }
+      ]
+    },
+    {
+      id: "jack-only-good",
+      ep: 1,
+      epTitle: "Pilot",
+      speaker: "잭",
+      scene: "분만실 · 세 쌍둥이를 기다리는 아침",
+      quote: "I'm gonna need everyone in this room to believe that only good things are going to happen today. Actually, I need you to know it. Do you know it, baby?",
+      ko: "지금 이 방에 있는 모두가, 오늘은 좋은 일만 일어날 거라고 믿어줘야 해. 아니, 믿는 게 아니라 알아야 해. 알지, 자기야?",
+      points: [
+        { t: "표현", c: "", x: "`need + 사람 + to do` = ~에게 ...하라고 요구하다. 여기에 `be going to`(예정·확신)가 겹쳐 '오늘은 좋은 일만 생길 거야'라는 확신을 만듭니다." },
+        { t: "관사", c: "", x: "`everyone in this room`은 지시어 this로 범위를 좁힌 특정 공간. `only good things`는 복수 일반명사라 관사 없이 씁니다(무관사 복수)." },
+        { t: "억양", c: "g", x: "`ONly GOOD things`에 두 번 강세를 주고, `Do you KNOW it?`은 확인을 구하는 질문이라 끝을 살짝 올립니다. `Actually` 뒤에서 한 박자 쉬면 '믿는 것'과 '아는 것'의 대비가 살아납니다." }
+      ]
+    },
+    {
+      id: "randall-not-here",
+      ep: 1,
+      epTitle: "Pilot",
+      speaker: "랜들",
+      scene: "생부 윌리엄의 집 앞 · 36년 만의 첫 대면",
+      quote: "Don't worry. I am not here because I want anything from you. Don't need a hug, don't need any money.",
+      ko: "걱정 마세요. 뭘 얻으러 온 거 아니니까. 안아 달란 것도 아니고, 돈 달란 것도 아니에요.",
+      points: [
+        { t: "문법", c: "", x: "`I am not here because ...`는 'because 이하 때문에 여기 온 것이 아니다'라는 뜻. 부정이 because절 전체를 부정합니다. 이어지는 `Don't need ...`는 주어 I를 생략한 구어체입니다." },
+        { t: "관사", c: "", x: "`a hug`는 셀 수 있는 단수라 a, `any money`는 셀 수 없는 명사에 부정문이라 any. 부정문에서 some 대신 any를 쓰는 기본 규칙이 그대로 나옵니다." },
+        { t: "억양", c: "g", x: "`I am NOT here`에서 not을 강하게, `any MONey`에서 마지막 명사에 힘을 주면 '정말 아무것도 원하지 않는다'는 단호함이 전달됩니다." }
+      ]
+    },
+    {
+      id: "william-dying",
+      ep: 1,
+      epTitle: "Pilot",
+      speaker: "윌리엄",
+      scene: "랜들의 집을 떠나며 · 자신의 상태를 처음 밝히는 장면",
+      quote: "Dying, not sick. Sick was months ago. I'm toward the end, fortunately.",
+      ko: "죽어가는 거지, 아픈 게 아니야. 아픈 건 몇 달 전 일이고. 다행히 이제 끝자락이야.",
+      points: [
+        { t: "문법", c: "", x: "`Dying, not sick.`은 `I'm`이 생략된 분사구입니다. `A, not B` 대조 구조로 '아픈 게 아니라 죽어가는 중'이라고 정확히 다시 말합니다. `dead`(형용사, 이미 죽은 상태)와 `dying`(진행)의 차이도 함께 익혀 두세요." },
+        { t: "시제", c: "", x: "`Sick was months ago`는 상태를 과거로 밀어내고, `I'm toward the end`는 현재. 시제만 바꿔 '아팠던 때'와 '지금'을 구분합니다." },
+        { t: "억양", c: "g", x: "`DYing, not SICK`처럼 두 단어에 강세를 주고 사이를 끊으면 대조가 선명해집니다. `fortunately`는 오히려 담담하게 낮춰 말할 때 블랙 유머가 살아납니다." }
+      ]
+    },
+    {
+      id: "rebecca-ten",
+      ep: 2,
+      epTitle: "The Big Three",
+      speaker: "리베카",
+      scene: "술 마시고 늦게 들어온 잭에게 육아 점수를 매기는 밤",
+      quote: "Because when you're home, and you're you, you're way better than I am. You're a ten when you're you, Jack.",
+      ko: "당신이 집에 있고, 당신다울 때는 나보다 훨씬 나아요. 당신다울 때의 당신은 10점이에요, 잭.",
+      points: [
+        { t: "문법", c: "", x: "`when you're you` — 대명사 you를 '당신다운 모습'이라는 뜻으로 쓴 표현. `way better than I am`은 비교급 강조(way)와 비교 대상 뒤 동사 반복(I am)입니다." },
+        { t: "관사", c: "", x: "점수를 셀 수 있는 명사처럼 다뤄 `a ten`이라고 합니다. '10점짜리 사람'이라는 의미의 부정관사입니다." },
+        { t: "억양", c: "g", x: "`you're YOU`에서 두 번째 you에 강세를 주어 '당신다운 당신'을 대조하고, `a TEN`에서 숫자를 또렷하게 올려 말합니다." }
+      ]
+    },
+    {
+      id: "jack-eleven",
+      ep: 2,
+      epTitle: "The Big Three",
+      speaker: "잭",
+      scene: "다음 날 아침 · 금주를 약속하며",
+      quote: "I'll be an 11 for the kids, but you get a 12.",
+      ko: "애들한테는 11점 아빠가 될게. 하지만 당신한테는 12점이야.",
+      points: [
+        { t: "관사", c: "", x: "`an 11`은 eleven이 모음 소리(/ɪ/)로 시작해 an, `a 12`는 twelve가 자음 소리(/tw/)로 시작해 a. 숫자도 '글자'가 아니라 '소리'로 관사를 고릅니다." },
+        { t: "시제", c: "", x: "`I'll be`는 앞으로의 의지, `you get`은 현재형으로 이미 정해진 약속. 미래 일에 현재형을 쓰면 더 확고하게 들립니다." },
+        { t: "억양", c: "g", x: "`but YOU get a TWELVE` — but 뒤에서 잠깐 쉬고 you와 twelve를 강하게. 아이들 11점, 당신 12점이라는 대비가 이 한 문장의 전부입니다." }
+      ]
+    },
+    {
+      id: "kate-weight",
+      ep: 2,
+      epTitle: "The Big Three",
+      speaker: "케이트",
+      scene: "체중 감량 모임에서 만난 토비에게 처음 속마음을 꺼내는 장면",
+      quote: "It's always gonna be about the weight for me, Toby. It's been my story ever since I was a little girl. And every moment that I'm not thinking about it, I'm thinking about it.",
+      ko: "난 평생 몸무게가 문제일 거야, 토비. 어린 여자아이 때부터 그게 내 이야기였어. 그걸 생각하지 않는 순간에도, 난 그걸 생각하고 있어.",
+      points: [
+        { t: "시제", c: "", x: "`It's been my story ever since I was a little girl` — 과거의 시작점부터 지금까지 이어지므로 현재완료. `ever since` 뒤 절은 과거형으로 시작점을 찍습니다." },
+        { t: "문법", c: "", x: "`every moment that I'm not thinking about it, I'm thinking about it` — 부정과 긍정을 나란히 놓아 '생각 안 하는 순간조차 생각 중'이라는 아이러니를 만듭니다." },
+        { t: "억양", c: "g", x: "`ALways`에 강세, 마지막 문장은 `thinking about it`을 같은 리듬으로 두 번 반복해 체념한 듯한 톤을 만듭니다. 끝을 올리지 말고 평평하게 두는 것이 포인트." }
+      ]
+    },
+    {
+      id: "jack-adopted",
+      ep: 6,
+      epTitle: "Career Days",
+      speaker: "잭",
+      scene: "자신의 뿌리를 찾으려는 밤 · 잭이 아들 랜들에게",
+      quote: "You're adopted, and we don't talk about that enough. 'Cause to me, you are every part my son. I love you as much as a human heart can, kiddo.",
+      ko: "너는 입양됐고, 우리는 그 얘기를 충분히 나누지 않았어. 왜냐하면 나한테 너는 하나부터 열까지 다 내 아들이니까. 내 마음이 할 수 있는 만큼 너를 사랑해, 아들아.",
+      points: [
+        { t: "관사", c: "", x: "`a human heart` — 추상적인 '마음'을 '하나의 심장'이라는 셀 수 있는 단수로 만들어 a를 썼습니다. `the human heart`라고 하면 '인간의 마음 일반'이 되어 훨씬 건조하게 들립니다." },
+        { t: "문법", c: "", x: "`as much as a human heart can` — as ~ as 비교. 뒤쪽은 `can love`에서 동사를 생략해 조동사만 남긴 형태입니다." },
+        { t: "억양", c: "g", x: "`EVery part my SON`에서 every와 son을 강하게. `I LOVE you`는 문장 첫머리 동사에 감정을 실어 천천히 말합니다." }
+      ]
+    },
+    {
+      id: "kevin-dad-died",
+      ep: 6,
+      epTitle: "Career Days",
+      speaker: "케빈",
+      scene: "아버지의 죽음을 처음으로 입 밖에 내는 장면",
+      quote: "What happened is my dad died. That's what. And I hated him for it.",
+      ko: "무슨 일이 있었냐면, 우리 아빠가 돌아가셨어. 그거야. 그리고 난 그 일 때문에 아빠를 미워했어.",
+      points: [
+        { t: "문법", c: "", x: "`What happened is (that) my dad died.` — 의사분열문(cleft)으로 '일어난 일'의 내용을 뒤에 붙여 강조합니다. that은 생략되어도 뒤에는 완전한 절이 옵니다." },
+        { t: "시제", c: "", x: "`hated`는 과거. 지금은 미워하지 않는다는 사실을 시제만으로 암시합니다. `That's what.`은 '그게 전부야'라는 짧은 확인입니다." },
+        { t: "억양", c: "g", x: "`my DAD DIED` 두 단어에 강세를 주고, `THAT'S what`은 짧게 끊어 내려앉히세요. 감정을 올리지 않고 눌러 말할수록 무게가 생깁니다." }
+      ]
+    },
+    {
+      id: "william-catch",
+      ep: 8,
+      epTitle: "Pilgrim Rick",
+      speaker: "윌리엄",
+      scene: "추수감사절 · 시한부인 윌리엄이 젊은 올리비아에게",
+      quote: "Catch the moments of your life. Catch them while you're young and quick. Because sooner than you know it, you'll be old and slow, and there'll be no more of them to catch.",
+      ko: "당신 인생의 순간들을 붙잡으세요. 젊고 재빠를 때 붙잡으세요. 생각보다 훨씬 빨리 늙고 느려져서, 더는 붙잡을 순간이 없을 테니까요.",
+      points: [
+        { t: "문법", c: "", x: "명령문 `Catch ...` + `while you're young`(시간 부사절). 시간·조건 부사절에서는 미래 일도 현재형으로 씁니다. `sooner than you know it`은 '생각보다 빨리'라는 관용 표현." },
+        { t: "관사", c: "", x: "`the moments of your life`는 '당신 인생의 그 순간들'이라 the. 뒤의 `them`은 앞의 the moments를 받는 대명사입니다." },
+        { t: "억양", c: "g", x: "`CATCH`를 두 번 반복하며 강세, `OLD and SLOW`는 두 형용사에 같은 무게. 마지막 `no more of them to CATCH`는 천천히 늘어놓듯." }
+      ]
+    },
+    {
+      id: "william-deserve",
+      ep: 16,
+      epTitle: "Memphis",
+      speaker: "윌리엄",
+      scene: "임종을 앞두고 아들에게 남긴 마지막 말",
+      quote: "You deserve it. You deserve the beautiful life you've made. You deserve everything, Randall. My beautiful boy. My son.",
+      ko: "당신은 그럴 자격이 있어요. 당신이 만든 아름다운 삶을 누릴 자격이 있어요. 모든 걸 누릴 자격이 있어요, 랜들. 내 아름다운 아들. 내 아들.",
+      points: [
+        { t: "문법", c: "", x: "`deserve + 목적어`를 세 번 반복(anaphora)해 감정을 쌓습니다. `the life you've made`는 목적격 관계대명사 that/which가 생략된 구조." },
+        { t: "관사", c: "", x: "`the beautiful life`는 그가 실제로 만든 특정한 삶이라 the, `everything`은 셀 수 없이 전체를 가리켜 관사 없이 씁니다." },
+        { t: "억양", c: "g", x: "세 번의 `You deserve`를 조금씩 낮고 느리게. 마지막 `My SON`에서 소유격을 강하게 두면 마지막 인사처럼 들립니다." }
+      ]
+    },
+    {
+      id: "jack-big-break",
+      ep: 18,
+      epTitle: "Moonshadow",
+      speaker: "잭",
+      scene: "큰 싸움 다음 날 아침 · 짐을 들고 집을 나서기 전",
+      quote: "You're not just my great love story, Rebecca. You were my big break.",
+      ko: "당신은 그저 내 위대한 사랑 이야기가 아니에요, 리베카. 당신은 내 인생의 결정적 기회였어요.",
+      points: [
+        { t: "시제", c: "", x: "`You're`(현재)와 `You were`(과거)를 나란히. 지금도 유효한 정체성과, 이미 지나간 그때의 사실을 구분합니다." },
+        { t: "문법", c: "", x: "`not just A, B` — 'A일 뿐 아니라 B'라는 강조 구문입니다. 여기서는 but을 생략하고 B를 별도 문장으로 끊어 무게를 줍니다." },
+        { t: "억양", c: "g", x: "`BIG break`에 강세를 두고 break에서 확실히 내려앉히세요. `not JUST`는 낮게 흘려 A를 가볍게 만드는 것이 포인트." }
+      ]
+    }
+  ];
+
+  /* ============ 데이터: 빈칸 퀴즈 12문항 ============ */
+  var QUIZ = [
+    {
+      qid: "dk-lemon",
+      text: "I like to think that maybe one day you'll be _____ old man like me, talking a younger man's ear off.",
+      options: ["an", "a", "the", "(관사 없음)"],
+      answer: 0,
+      why: "old는 모음 소리(/oʊ/)로 시작하므로 부정관사는 an입니다. 여기서는 '어떤 늙은이'라는 불특정 단수라 a/an을 쓰고, 바로 뒤 `the sourest lemon`처럼 하나뿐인 최상급에는 the를 씁니다."
+    },
+    {
+      qid: "jack-only-good",
+      text: "Only good things _____ going to happen today. I need you to know it.",
+      options: ["are", "is", "was", "be"],
+      answer: 0,
+      why: "주어 good things가 복수라 are. `be going to`는 예정·확신을 나타내고, `need you to know`는 '네가 알기를 원한다'는 요구 표현입니다."
+    },
+    {
+      qid: "randall-not-here",
+      text: "I am not here because I want _____ from you.",
+      options: ["anything", "something", "everything", "nothing"],
+      answer: 0,
+      why: "부정문에서 '무엇이든'은 anything입니다. something은 긍정문, nothing을 쓰면 `not ... nothing`이 되어 이중부정이 됩니다."
+    },
+    {
+      qid: "william-dying",
+      text: "_____, not sick. Sick was months ago.",
+      options: ["Dying", "Die", "Died", "Dead"],
+      answer: 0,
+      why: "`I'm`이 생략된 분사구입니다. dying은 '죽어가는 중', dead는 '이미 죽은 상태'. `A, not B` 대조로 '아픈 게 아니라 죽어가는 것'이라고 바로잡는 말입니다."
+    },
+    {
+      qid: "rebecca-ten",
+      text: "When you're home, and you're you, you're _____ better than I am.",
+      options: ["way", "very", "too", "more"],
+      answer: 0,
+      why: "비교급 강조는 way / much / far / a lot. very는 비교급을 수식하지 못합니다(`very better`는 틀림). `than I am`처럼 비교 대상 뒤 동사를 남기는 형태도 함께 익혀 두세요."
+    },
+    {
+      qid: "jack-eleven",
+      text: "I'll be an 11 for the kids, but you get _____ 12.",
+      options: ["a", "an", "the", "(관사 없음)"],
+      answer: 0,
+      why: "twelve는 자음 소리(/tw/)로 시작해 a, eleven은 모음 소리(/ɪ/)로 시작해 an. 숫자도 소리로 관사를 고릅니다. 앞의 `an 11`과 짝을 이루는 문장입니다."
+    },
+    {
+      qid: "kate-weight",
+      text: "It _____ my story ever since I was a little girl.",
+      options: ["has been", "is", "was", "had been"],
+      answer: 0,
+      why: "`ever since`로 시작점이 제시되고 그 상태가 지금까지 이어지므로 현재완료(has been). since절은 과거형(I was)으로 시작점을 표시합니다."
+    },
+    {
+      qid: "jack-adopted",
+      text: "I love you as much as a human heart _____.",
+      options: ["can", "is", "does", "will"],
+      answer: 0,
+      why: "`as much as a human heart can (love)` — as ~ as 사이의 비교에서 뒤 동사를 생략하고 조동사만 남긴 형태입니다. '인간의 마음이 할 수 있는 만큼'이라는 뜻."
+    },
+    {
+      qid: "kevin-dad-died",
+      text: "What happened _____ my dad died. That's what.",
+      options: ["is", "was", "did", "has"],
+      answer: 0,
+      why: "`What happened is (that) ...` 의사분열문입니다. 현재형 is로 '지금 말하자면'의 느낌을 주고, that은 생략되어도 뒤에는 완전한 절이 옵니다."
+    },
+    {
+      qid: "william-catch",
+      text: "Catch them _____ you're young and quick.",
+      options: ["while", "during", "until", "since"],
+      answer: 0,
+      why: "뒤에 절(you're young)이 오므로 접속사 while. during은 명사 앞에만 씁니다. 시간 부사절에서는 미래 일도 현재형으로 씁니다."
+    },
+    {
+      qid: "william-deserve",
+      text: "You deserve the beautiful life you _____.",
+      options: ["'ve made", "make", "are making", "will make"],
+      answer: 0,
+      why: "지금까지 이뤄 온 삶이므로 현재완료(`you have made`). 관계대명사 that/which가 목적격으로 생략된 자리입니다."
+    },
+    {
+      qid: "jack-big-break",
+      text: "You're not just my great love story, Rebecca. You _____ my big break.",
+      options: ["were", "are", "was", "had been"],
+      answer: 0,
+      why: "과거의 사실이므로 were. 주어 you는 인칭과 관계없이 be동사가 were입니다. 앞의 현재형 You're와 대비되어 '지금도 그렇고, 그때도 그랬다'는 울림을 만듭니다."
+    }
+  ];
+
+  /* ============ 저장소 ============ */
+  var KEY = "tiu-en-study-v1";
+  var DEFAULT_STATE = { learned: {}, fav: {}, rate: 1, best: null };
+  var S = loadState();
+
+  function loadState() {
+    var base = { learned: {}, fav: {}, rate: 1, best: null };
+    try {
+      var raw = window.localStorage.getItem(KEY);
+      if (!raw) return base;
+      var p = JSON.parse(raw);
+      if (!p || typeof p !== "object") return base;
+      if (p.learned && typeof p.learned === "object") base.learned = p.learned;
+      if (p.fav && typeof p.fav === "object") base.fav = p.fav;
+      if (typeof p.rate === "number" && p.rate > 0) base.rate = p.rate;
+      if (typeof p.best === "number") base.best = p.best;
+      return base;
+    } catch (e) {
+      return base;
+    }
+  }
+  function saveState() {
+    try { window.localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+  }
+
+  /* ============ 유틸 ============ */
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  var toastTimer = null;
+  function toast(msg) {
+    var t = $("#toast");
+    t.textContent = msg;
+    t.classList.add("on");
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove("on"); }, 1700);
+  }
+  function richText(s) {
+    // 백틱으로 감싼 영어 표현을 굵게 표시합니다.
+    var parts = String(s).split("`");
+    var out = "";
+    for (var i = 0; i < parts.length; i++) {
+      out += (i % 2 === 1) ? "<b>" + esc(parts[i]) + "</b>" : esc(parts[i]);
+    }
+    return out;
+  }
+  function episodeLabel(q) { return "S1 · E" + q.ep; }
+  function byId(id) {
+    for (var i = 0; i < QUOTES.length; i++) if (QUOTES[i].id === id) return QUOTES[i];
+    return null;
+  }
+  function learnedCount() { return Object.keys(S.learned).filter(function (k) { return S.learned[k]; }).length; }
+  function favCount() { return Object.keys(S.fav).filter(function (k) { return S.fav[k]; }).length; }
+
+  /* ============ 상단 진도 ============ */
+  function updateMeters() {
+    var total = QUOTES.length;
+    var done = learnedCount();
+    var pct = total ? Math.round(done / total * 100) : 0;
+    $("#meterFill").style.width = pct + "%";
+    $("#meterText").textContent = done + " / " + total + " 학습 완료";
+    $("#meterStar").textContent = "★ " + favCount();
+    $("#stLearned").textContent = done;
+    $("#stFav").textContent = favCount();
+    $("#stBest").textContent = (S.best === null ? "-" : S.best + "/" + QUIZ.length);
+    $("#revFill").style.width = pct + "%";
+    $("#revText").textContent = "전체 진도 " + pct + "%";
+    $("#favCount").textContent = favCount() + "개";
+  }
+
+  /* ============ 탭 ============ */
+  var currentTab = "learn";
+  function setTab(name) {
+    currentTab = name;
+    $$(".view").forEach(function (v) { v.classList.remove("on"); });
+    var view = $("#view-" + name);
+    if (view) view.classList.add("on");
+    $$(".tabs button").forEach(function (b) {
+      b.setAttribute("aria-selected", b.getAttribute("data-tab") === name ? "true" : "false");
+    });
+    window.scrollTo(0, 0);
+    if (name === "review") renderReview();
+    if (name === "quiz" && !quizState.started) renderQuizIntro();
+  }
+  $$(".tabs button").forEach(function (b) {
+    b.addEventListener("click", function () { setTab(b.getAttribute("data-tab")); });
+  });
+
+  /* ============ 학습 탭 ============ */
+  var filterEp = "all";
+  var filterCh = "all";
+  var cardIndex = 0;
+  var koOpen = false;
+  var pointsOpen = true;
+
+  function episodes() {
+    var seen = [];
+    QUOTES.forEach(function (q) { if (seen.indexOf(q.ep) === -1) seen.push(q.ep); });
+    return seen;
+  }
+  function speakers() {
+    var seen = [];
+    QUOTES.forEach(function (q) { if (seen.indexOf(q.speaker) === -1) seen.push(q.speaker); });
+    return seen;
+  }
+  function filtered() {
+    return QUOTES.filter(function (q) {
+      if (filterEp !== "all" && String(q.ep) !== filterEp) return false;
+      if (filterCh !== "all" && q.speaker !== filterCh) return false;
+      return true;
+    });
+  }
+
+  function buildChips() {
+    var epHtml = ["<button class=\"chip\" data-act=\"ep\" data-val=\"all\" aria-pressed=\"true\">전체</button>"];
+    episodes().forEach(function (e) {
+      epHtml.push("<button class=\"chip\" data-act=\"ep\" data-val=\"" + e + "\" aria-pressed=\"false\">E" + e + "</button>");
+    });
+    $("#epChips").innerHTML = epHtml.join("");
+
+    var chHtml = ["<button class=\"chip\" data-act=\"ch\" data-val=\"all\" aria-pressed=\"true\">전체</button>"];
+    speakers().forEach(function (s) {
+      chHtml.push("<button class=\"chip\" data-act=\"ch\" data-val=\"" + esc(s) + "\" aria-pressed=\"false\">" + esc(s) + "</button>");
+    });
+    $("#chChips").innerHTML = chHtml.join("");
+  }
+
+  function syncChips() {
+    $$("#epChips .chip").forEach(function (c) {
+      c.setAttribute("aria-pressed", c.getAttribute("data-val") === filterEp ? "true" : "false");
+    });
+    $$("#chChips .chip").forEach(function (c) {
+      c.setAttribute("aria-pressed", c.getAttribute("data-val") === filterCh ? "true" : "false");
+    });
+  }
+
+  function pointsHtml(q, small) {
+    var out = ["<div class=\"points\">"];
+    q.points.forEach(function (p) {
+      var cls = "pt-tag" + (p.c ? " " + p.c : "");
+      out.push("<div class=\"pt\"><span class=\"" + cls + "\">" + esc(p.t) + "</span><p>" + richText(p.x) + "</p></div>");
+    });
+    out.push("</div>");
+    return out.join("");
+  }
+
+  function cardHtml(q) {
+    var isFav = !!S.fav[q.id];
+    var isDone = !!S.learned[q.id];
+    var initial = q.speaker.replace(/\s/g, "").charAt(0);
+    var h = [];
+    h.push("<article class=\"card\" id=\"curCard\">");
+    h.push("  <div class=\"card-top\">");
+    h.push("    <span class=\"ep\">" + episodeLabel(q) + " · " + esc(q.epTitle) + "</span>");
+    h.push("    <button class=\"star\" data-act=\"star\" aria-pressed=\"" + (isFav ? "true" : "false") + "\" aria-label=\"즐겨찾기\">" + (isFav ? "★" : "☆") + "</button>");
+    h.push("  </div>");
+    h.push("  <div class=\"speaker\"><span class=\"avatar\">" + esc(initial) + "</span><div><b>" + esc(q.speaker) + "</b><small>" + esc(q.scene) + "</small></div></div>");
+    h.push("  <p class=\"quote\">" + esc(q.quote) + "</p>");
+    h.push("  <div class=\"listen\"><span class=\"listen-label\">듣기</span>");
+    h.push("    <button class=\"btn-speak\" data-act=\"speak\" data-rate=\"0.8\" aria-pressed=\"" + (S.rate === 0.8 ? "true" : "false") + "\">🐢 0.8x</button>");
+    h.push("    <button class=\"btn-speak\" data-act=\"speak\" data-rate=\"1\" aria-pressed=\"" + (S.rate === 1 ? "true" : "false") + "\">🔊 1.0x</button>");
+    h.push("  </div>");
+    h.push("  <div class=\"divider\"></div>");
+    h.push("  <button class=\"sect-btn\" data-act=\"ko\" aria-expanded=\"" + (koOpen ? "true" : "false") + "\"><span>한글 해석</span><span class=\"caret\">▾</span></button>");
+    h.push("  <p class=\"ko" + (koOpen ? "" : " hide") + "\">" + esc(q.ko) + "</p>");
+    h.push("  <div class=\"divider\"></div>");
+    h.push("  <button class=\"sect-btn\" data-act=\"points\" aria-expanded=\"" + (pointsOpen ? "true" : "false") + "\"><span>표현 &amp; 문법 포인트 <b style=\"color:#B85C38\">" + q.points.length + "</b></span><span class=\"caret\">▾</span></button>");
+    h.push("  <div class=\"points-wrap\"" + (pointsOpen ? "" : " style=\"display:none\"") + ">" + pointsHtml(q) + "</div>");
+    h.push("  <div class=\"card-foot\"><button class=\"btn-done\" data-act=\"done\" aria-pressed=\"" + (isDone ? "true" : "false") + "\">" + (isDone ? "✓ 학습 완료" : "학습 완료로 표시") + "</button></div>");
+    h.push("</article>");
+    return h.join("\n");
+  }
+
+  function renderLearn() {
+    var list = filtered();
+    if (cardIndex > list.length - 1) cardIndex = Math.max(0, list.length - 1);
+    if (cardIndex < 0) cardIndex = 0;
+    syncChips();
+
+    var host = $("#cardHost");
+    if (!list.length) {
+      host.innerHTML = "<div class=\"empty\">이 조합에는 아직 대사가 없어요.<br>필터를 '전체'로 바꿔 보세요.</div>";
+      updateMeters();
+      return;
+    }
+    var q = list[cardIndex];
+    var nav = [];
+    nav.push("<div class=\"card-nav\">");
+    nav.push("  <button data-act=\"prev\"" + (cardIndex === 0 ? " disabled" : "") + ">◀ 이전</button>");
+    nav.push("  <span class=\"counter\"><b>" + (cardIndex + 1) + "</b> / " + list.length + "</span>");
+    nav.push("  <button data-act=\"next\"" + (cardIndex === list.length - 1 ? " disabled" : "") + ">다음 ▶</button>");
+    nav.push("</div>");
+    host.innerHTML = cardHtml(q) + nav.join("");
+    updateMeters();
+  }
+
+  function go(delta) {
+    var list = filtered();
+    var next = cardIndex + delta;
+    if (next < 0 || next > list.length - 1) return;
+    cardIndex = next;
+    koOpen = false;
+    renderLearn();
+  }
+
+  /* 음성 */
+  function pickVoice() {
+    if (!window.speechSynthesis) return null;
+    var vs = window.speechSynthesis.getVoices() || [];
+    var best = null;
+    for (var i = 0; i < vs.length; i++) {
+      var v = vs[i];
+      var lang = v.lang || "";
+      if (lang.indexOf("en-US") !== 0) continue;
+      if (!best) best = v;
+      var name = v.name || "";
+      if (/Samantha|Alex|Google US English|Ava|Allison|Susan/i.test(name)) return v;
+    }
+    if (!best) {
+      for (var j = 0; j < vs.length; j++) {
+        if ((vs[j].lang || "").indexOf("en") === 0) return vs[j];
+      }
+    }
+    return best;
+  }
+  var voicesPrimed = false;
+  function speak(text, rate) {
+    if (!("speechSynthesis" in window) || typeof window.SpeechSynthesisUtterance !== "function") {
+      toast("이 브라우저는 음성 듣기를 지원하지 않아요.");
+      return;
+    }
+    try {
+      window.speechSynthesis.cancel();
+      var u = new window.SpeechSynthesisUtterance(text);
+      u.lang = "en-US";
+      u.rate = rate || 1;
+      var v = pickVoice();
+      if (v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    } catch (e) {
+      toast("음성을 재생할 수 없어요.");
+    }
+  }
+
+  /* 학습 탭 이벤트 (위임) */
+  $("#view-learn").addEventListener("click", function (ev) {
+    var t = ev.target;
+    var btn = t.closest ? t.closest("[data-act]") : null;
+    if (!btn) return;
+    var act = btn.getAttribute("data-act");
+    var list = filtered();
+    var q = list[cardIndex];
+
+    if (act === "ep") {
+      filterEp = btn.getAttribute("data-val");
+      cardIndex = 0; koOpen = false;
+      renderLearn();
+      return;
+    }
+    if (act === "ch") {
+      filterCh = btn.getAttribute("data-val");
+      cardIndex = 0; koOpen = false;
+      renderLearn();
+      return;
+    }
+    if (!q) return;
+
+    if (act === "star") {
+      S.fav[q.id] = !S.fav[q.id];
+      if (!S.fav[q.id]) delete S.fav[q.id];
+      saveState();
+      btn.setAttribute("aria-pressed", S.fav[q.id] ? "true" : "false");
+      btn.textContent = S.fav[q.id] ? "★" : "☆";
+      toast(S.fav[q.id] ? "복습장에 담았어요" : "복습장에서 뺐어요");
+      updateMeters();
+      if (currentTab === "review") renderReview();
+      return;
+    }
+    if (act === "speak") {
+      var rate = parseFloat(btn.getAttribute("data-rate"));
+      S.rate = rate; saveState();
+      $$("#view-learn .btn-speak").forEach(function (b) {
+        b.setAttribute("aria-pressed", parseFloat(b.getAttribute("data-rate")) === rate ? "true" : "false");
+      });
+      speak(q.quote, rate);
+      return;
+    }
+    if (act === "ko") {
+      koOpen = !koOpen;
+      btn.setAttribute("aria-expanded", koOpen ? "true" : "false");
+      var koEl = $("#curCard .ko");
+      if (koEl) koEl.classList.toggle("hide", !koOpen);
+      return;
+    }
+    if (act === "points") {
+      pointsOpen = !pointsOpen;
+      btn.setAttribute("aria-expanded", pointsOpen ? "true" : "false");
+      var wrap = $("#curCard .points-wrap");
+      if (wrap) wrap.style.display = pointsOpen ? "" : "none";
+      return;
+    }
+    if (act === "done") {
+      var now = !S.learned[q.id];
+      if (now) S.learned[q.id] = true; else delete S.learned[q.id];
+      saveState();
+      btn.setAttribute("aria-pressed", now ? "true" : "false");
+      btn.textContent = now ? "✓ 학습 완료" : "학습 완료로 표시";
+      toast(now ? "학습 완료로 기록했어요" : "학습 표시를 해제했어요");
+      updateMeters();
+      if (currentTab === "review") renderReview();
+      return;
+    }
+    if (act === "prev") { go(-1); return; }
+    if (act === "next") { go(1); return; }
+  });
+
+  /* 스와이프 */
+  var tStartX = null, tStartY = null;
+  var host = $("#cardHost");
+  host.addEventListener("touchstart", function (e) {
+    if (e.touches.length !== 1) { tStartX = null; return; }
+    tStartX = e.touches[0].clientX;
+    tStartY = e.touches[0].clientY;
+  }, { passive: true });
+  host.addEventListener("touchend", function (e) {
+    if (tStartX === null) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - tStartX;
+    var dy = t.clientY - tStartY;
+    tStartX = null;
+    if (Math.abs(dx) > 60 && Math.abs(dy) < 50) {
+      go(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  /* ============ 퀴즈 탭 ============ */
+  var quizState = { started: false, order: [], items: [], idx: 0, score: 0, picked: -1, done: false };
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function renderQuizIntro() {
+    quizState.started = false;
+    quizState.order = [];
+    quizState.items = [];
+    quizState.idx = 0;
+    quizState.score = 0;
+    quizState.picked = -1;
+    quizState.done = false;
+    var bestTxt = (S.best === null) ? "아직 기록이 없어요" : "최고 " + S.best + "/" + QUIZ.length;
+    $("#quizHost").innerHTML =
+      "<div class=\"quiz-intro\">" +
+      "  <div class=\"big\">✏️</div>" +
+      "  <h2>빈칸 퀴즈</h2>" +
+      "  <p>12개 장면의 실제 대사에서<br>관사·시제·표현을 골라냈어요.</p>" +
+      "  <p style=\"color:#9C8674;font-size:12.5px\">" + bestTxt + "</p>" +
+      "  <button class=\"btn-next\" data-qact=\"start\">12문제 시작하기</button>" +
+      "</div>";
+  }
+
+  function startQuiz() {
+    quizState.started = true;
+    quizState.order = shuffle(QUIZ.map(function (_, i) { return i; }));
+    // 문제 순서와 보기 순서를 매번 섞어 정답 위치가 드러나지 않게 합니다.
+    quizState.items = quizState.order.map(function (qi) {
+      var opts = QUIZ[qi].options.map(function (o, i) { return { text: o, i: i }; });
+      return { qi: qi, opts: shuffle(opts) };
+    });
+    quizState.idx = 0;
+    quizState.score = 0;
+    quizState.picked = -1;
+    quizState.done = false;
+    renderQuizQuestion();
+  }
+
+  function renderQuizQuestion() {
+    var item = quizState.items[quizState.idx];
+    var qitem = QUIZ[item.qi];
+    var q = byId(qitem.qid);
+    var label = q ? (episodeLabel(q) + " · " + q.speaker) : "S1";
+    var h = [];
+    h.push("<div class=\"quiz-head\"><h2>빈칸 퀴즈</h2><span>" + (quizState.idx + 1) + " / " + QUIZ.length + " · 정답 " + quizState.score + "</span></div>");
+    h.push("<div class=\"qcard\">");
+    h.push("  <div class=\"qmeta\">" + esc(label) + "</div>");
+    h.push("  <p class=\"qtext\">" + esc(qitem.text).replace("_____", "<span class=\"blank\">?</span>") + "</p>");
+    h.push("  <div class=\"opts\">");
+    item.opts.forEach(function (op, pos) {
+      h.push("    <button class=\"opt\" data-qact=\"pick\" data-i=\"" + pos + "\"><span class=\"k\">" + "ABCD".charAt(pos) + "</span><span>" + esc(op.text) + "</span></button>");
+    });
+    h.push("  </div>");
+    h.push("  <div id=\"explainHost\"></div>");
+    h.push("</div>");
+    $("#quizHost").innerHTML = h.join("\n");
+  }
+
+  function answerQuiz(pick) {
+    if (quizState.picked !== -1) return;
+    var item = quizState.items[quizState.idx];
+    var qitem = QUIZ[item.qi];
+    var q = byId(qitem.qid);
+    var chosen = item.opts[pick].i;
+    var correct = (chosen === qitem.answer);
+    quizState.picked = pick;
+    if (correct) quizState.score += 1;
+
+    $$("#quizHost .opt").forEach(function (b) {
+      var pos = parseInt(b.getAttribute("data-i"), 10);
+      var orig = item.opts[pos].i;
+      b.disabled = true;
+      if (orig === qitem.answer) b.classList.add("right");
+      else if (pos === pick) b.classList.add("wrong");
+    });
+
+    var verdict = correct ? "정답이에요" : "아쉬워요, 정답은 " + qitem.options[qitem.answer];
+    var full = q ? q.quote : "";
+    $("#explainHost").innerHTML =
+      "<div class=\"explain\">" +
+      "  <span class=\"verdict " + (correct ? "ok" : "no") + "\">" + esc(verdict) + "</span>" +
+      "  " + richText(qitem.why) +
+      (full ? "<span class=\"full\">" + esc(full) + "</span>" : "") +
+      "</div>" +
+      "<button class=\"btn-next\" data-qact=\"next\">" + (quizState.idx === QUIZ.length - 1 ? "결과 보기" : "다음 문제") + "</button>";
+
+    var head = $(".quiz-head span");
+    if (head) head.textContent = (quizState.idx + 1) + " / " + QUIZ.length + " · 정답 " + quizState.score;
+  }
+
+  function nextQuiz() {
+    if (quizState.idx === QUIZ.length - 1) {
+      quizState.done = true;
+      renderQuizResult();
+      return;
+    }
+    quizState.idx += 1;
+    quizState.picked = -1;
+    renderQuizQuestion();
+  }
+
+  function renderQuizResult() {
+    var score = quizState.score;
+    var total = QUIZ.length;
+    var pct = Math.round(score / total * 100);
+    var msg;
+    if (score === total) msg = "12개 장면 전부 정답이에요. 이제 복습장에서 소리 내어 읽어 보세요.";
+    else if (pct >= 75) msg = "좋아요. 틀린 문장은 복습장에 담아 두고 내일 다시 보면 완벽해져요.";
+    else if (pct >= 50) msg = "절반은 잡았어요. 관사와 시제 포인트를 카드에서 한 번 더 확인해 보세요.";
+    else msg = "괜찮아요. 학습 탭에서 대사를 한 번 듣고 다시 풀면 금방 올라가요.";
+    var isBest = (S.best === null || score > S.best);
+    if (isBest) { S.best = score; saveState(); }
+    $("#quizHost").innerHTML =
+      "<div class=\"quiz-intro\">" +
+      "  <div class=\"big\">🍋</div>" +
+      "  <h2>점수 확인</h2>" +
+      "  <p class=\"result-score\">" + score + " <small>/ " + total + "</small></p>" +
+      "  <p class=\"result-msg\">" + esc(msg) + "</p>" +
+      (isBest ? "<p class=\"result-msg\" style=\"color:#B85C38;font-weight:700\">최고 기록을 세웠어요!</p>" : "") +
+      "  <button class=\"btn-next\" data-qact=\"retry\">다시 풀기</button>" +
+      "  <button class=\"btn-ghost\" data-qact=\"toreview\">복습장 보러 가기</button>" +
+      "</div>";
+    updateMeters();
+  }
+
+  $("#view-quiz").addEventListener("click", function (ev) {
+    var t = ev.target;
+    var btn = t.closest ? t.closest("[data-qact]") : null;
+    if (!btn) return;
+    var act = btn.getAttribute("data-qact");
+    if (act === "start") { startQuiz(); return; }
+    if (act === "pick") { answerQuiz(parseInt(btn.getAttribute("data-i"), 10)); return; }
+    if (act === "next") { nextQuiz(); return; }
+    if (act === "retry") { startQuiz(); return; }
+    if (act === "toreview") { setTab("review"); return; }
+  });
+
+  /* ============ 복습장 ============ */
+  var openFav = {};
+
+  function renderReview() {
+    updateMeters();
+    var favs = QUOTES.filter(function (q) { return !!S.fav[q.id]; });
+    var host = $("#favList");
+    if (!favs.length) {
+      host.innerHTML = "<div class=\"empty\">아직 담아 둔 대사가 없어요.<br>학습 카드에서 ☆를 눌러 복습장에 담아 보세요.</div>";
+      return;
+    }
+    var h = [];
+    favs.forEach(function (q) {
+      var isOpen = !!openFav[q.id];
+      h.push("<div class=\"fav" + (isOpen ? " open" : "") + "\" data-id=\"" + q.id + "\">");
+      h.push("  <div class=\"fav-head\" role=\"button\" tabindex=\"0\" data-ract=\"toggle\" data-id=\"" + q.id + "\">");
+      h.push("    <div class=\"fav-top\"><span class=\"ep\">" + episodeLabel(q) + "</span><span class=\"who\">" + esc(q.speaker) + "</span><span class=\"unstar\" data-ract=\"unfav\" data-id=\"" + q.id + "\" role=\"button\" aria-label=\"즐겨찾기 해제\">★</span></div>");
+      h.push("    <p class=\"fav-quote\">" + esc(q.quote) + "</p>");
+      h.push("  </div>");
+      h.push("  <div class=\"fav-body\">");
+      h.push("    <p class=\"ko\">" + esc(q.ko) + "</p>");
+      h.push("    " + pointsHtml(q));
+      h.push("  </div>");
+      h.push("</div>");
+    });
+    host.innerHTML = h.join("\n");
+  }
+
+  $("#favList").addEventListener("click", function (ev) {
+    var t = ev.target;
+    var el = t.closest ? t.closest("[data-ract]") : null;
+    if (!el) return;
+    var act = el.getAttribute("data-ract");
+    var id = el.getAttribute("data-id");
+    if (act === "unfav") {
+      ev.stopPropagation();
+      delete S.fav[id];
+      saveState();
+      toast("복습장에서 뺐어요");
+      renderReview();
+      return;
+    }
+    if (act === "toggle") {
+      openFav[id] = !openFav[id];
+      var box = t.closest(".fav");
+      if (box) box.classList.toggle("open", !!openFav[id]);
+      return;
+    }
+  });
+
+  $("#resetBtn").addEventListener("click", function () {
+    var ok = window.confirm("학습 완료·즐겨찾기·퀴즈 최고 점수를 모두 지울까요? 이 브라우저의 기록만 지워집니다.");
+    if (!ok) return;
+    S = { learned: {}, fav: {}, rate: S.rate, best: null };
+    saveState();
+    openFav = {};
+    renderLearn();
+    renderReview();
+    renderQuizIntro();
+    toast("학습 기록을 초기화했어요");
+  });
+
+  /* ============ 시작 ============ */
+  buildChips();
+  renderLearn();
+  updateMeters();
+  if (window.speechSynthesis) {
+    // iOS는 첫 사용자 터치 전에는 음성 목록이 비어 있을 수 있어 미리 불러옵니다.
+    window.speechSynthesis.getVoices();
+    if (typeof window.speechSynthesis.onvoiceschanged !== "undefined") {
+      window.speechSynthesis.onvoiceschanged = function () { voicesPrimed = true; };
+    }
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden && window.speechSynthesis) window.speechSynthesis.cancel();
+  });
+})();
+</script>
+</body>
+</html>
